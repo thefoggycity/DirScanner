@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Express 2013 for Windows Desktop
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirScanner", "DirScanner\DirScanner.csproj", "{60DA1950-AC60-4E02-B77B-473F39167009}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DirScanViewer", "DirScanViewer\DirScanViewer.csproj", "{2915923D-7AE0-430F-A17F-5250AC2885EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{60DA1950-AC60-4E02-B77B-473F39167009}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60DA1950-AC60-4E02-B77B-473F39167009}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60DA1950-AC60-4E02-B77B-473F39167009}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60DA1950-AC60-4E02-B77B-473F39167009}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2915923D-7AE0-430F-A17F-5250AC2885EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2915923D-7AE0-430F-A17F-5250AC2885EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2915923D-7AE0-430F-A17F-5250AC2885EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2915923D-7AE0-430F-A17F-5250AC2885EB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
