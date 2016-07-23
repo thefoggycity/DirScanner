@@ -14,7 +14,7 @@ namespace DirScanner
             string Dir = Environment.CurrentDirectory;
             StreamWriter Result = new StreamWriter(Dir + "\\FileScanResult", false, Encoding.Unicode);
             DirectoryInfo Root = new DirectoryInfo(Dir);
-            Result.WriteLine("DirScannerResult {0} {1}", Environment.MachineName, DateTime.Now);
+            Result.WriteLine("DirScannerResult {0} {1}", Environment.MachineName, DateTime.Now.ToString("G"));
             Result.WriteLine("{0:s}", Root);
             EnumFile(Root, 0, Result);
             Result.Dispose();
@@ -41,13 +41,13 @@ namespace DirScanner
 
             foreach (DirectoryInfo d in DirEntries)
             {
-                R.WriteLine(" {0:s} {1:s} >", Prefix, d.Name);
+                R.WriteLine(" {0:s} [{1:s}] {2:s} >", Prefix, d.LastWriteTime.ToString("g"), d.Name);
                 EnumFile(d, Depth + 1, R);
             }
             foreach (FileInfo f in FileEntries)
             {
                 if (Depth != 0 || f.Name != "FileScanResult")
-                    R.WriteLine(" {0:s} [{1:s}] {2:s}", Prefix, SizeConvert(f.Length), f.Name);
+                    R.WriteLine(" {0:s} [{1:s}] [{2:s}] {3:s}", Prefix, f.LastWriteTime.ToString("g"), SizeConvert(f.Length), f.Name);
             }
             R.Flush();
 

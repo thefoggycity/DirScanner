@@ -18,6 +18,7 @@ namespace DirScanViewer
         {
             public bool IsDir;
             public int Depth;
+            public string WTime;
             public string Name;
             public string Size;
         }
@@ -91,6 +92,8 @@ namespace DirScanViewer
             LineRecord = LineRecord.Substring(1);
             Rec.Depth = LineRecord.IndexOf(' ');
             LineRecord = LineRecord.Substring(Rec.Depth + 1);
+            Rec.WTime = LineRecord.Substring(1, LineRecord.IndexOf(']') - 1);
+            LineRecord = LineRecord.Remove(0, LineRecord.IndexOf(']') + 2);
             if (Rec.IsDir)
             {
                 Rec.Name = LineRecord.Remove(LineRecord.Length - 2, 2);
@@ -114,12 +117,12 @@ namespace DirScanViewer
                     Color Bg;
                     if (Records[Index].IsDir)
                     {
-                        info = "Directory";
+                        info = Records[Index].WTime + " " + "Directory";
                         Bg = Color.LightBlue;
                     }
                     else
                     {
-                        info = Records[Index].Size;
+                        info = Records[Index].WTime + " " + Records[Index].Size;
                         Bg = Color.LightGreen;
                     }
                     Parent.Nodes.Add(new TreeNode()
